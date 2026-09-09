@@ -6,6 +6,3 @@
 !.dev.vars.example
 .env*
 !.env.example
-
-DOKUMENTASI.md
-REQUIREMENT.md
