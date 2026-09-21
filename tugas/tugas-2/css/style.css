@@ -1,0 +1,732 @@
+/* =========================================================
+   SMAN 1 Gunung Talang - shared stylesheet
+   Light mode only. No build step, no JavaScript.
+   ========================================================= */
+
+:root {
+  --background: #EEEEEE;
+  --surface: #FFFFFF;
+  --foreground: #334257;
+  --heading: #334257;
+  --muted-foreground: rgb(51 66 87 / 0.78);
+  --accent: #476072;
+  --accent-foreground: #FFFFFF;
+  --accent-mid: #548CA8;
+  --accent-soft: rgb(84 140 168 / 0.16);
+  --border: rgb(84 140 168 / 0.38);
+
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-display: "Libre Baskerville", Georgia, "Times New Roman", serif;
+
+  --max-w: 72rem;
+  --radius: 14px;
+  --gap: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use the serif face; weights stay at 700. */
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--heading);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.125rem; }
+
+p {
+  margin: 0 0 1rem;
+  max-width: 65ch;
+}
+
+ul,
+ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--heading);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:target {
+  scroll-margin-block: 6rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+section {
+  padding-block: 3rem;
+}
+
+/* ---------- site chrome ---------- */
+
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(238 238 238 / 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--border);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  header.site-header {
+    background: var(--background);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  header.site-header {
+    background: var(--background);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-block: 0.85rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--heading);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  display: inline-block;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.15rem;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  transition: color .22s ease, background-size .22s ease;
+  color: var(--foreground);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent);
+  background-image: linear-gradient(var(--accent-mid), var(--accent-mid));
+  background-size: 100% 2px;
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--accent);
+  background-size: 100% 2px;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease,
+    transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--heading);
+  border-color: var(--heading);
+  color: var(--accent-foreground);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--heading);
+  border-color: var(--accent-mid);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- forms ---------- */
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--accent-mid);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-mid);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+::placeholder {
+  color: var(--muted-foreground);
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+
+/* ---------- tables ---------- */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 22rem;
+  border-collapse: collapse;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: left;
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+th {
+  background: var(--accent-soft);
+  color: var(--heading);
+  font-weight: 600;
+}
+
+th,
+td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  transition: background-color .2s ease;
+}
+
+tr.total td {
+  font-weight: 700;
+  color: var(--heading);
+}
+
+/* ---------- footer ---------- */
+
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 2rem;
+  background: var(--surface);
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-inner p {
+  margin: 0;
+  max-width: none;
+}
+
+/* ---------- page: hero (index) ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -14rem;
+  right: -10rem;
+  width: 32rem;
+  height: 32rem;
+  background: radial-gradient(circle, rgb(84 140 168 / 0.28), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.hero-text p {
+  color: var(--muted-foreground);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* ---------- page: sambutan ---------- */
+
+.sambutan {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+}
+
+.sambutan-inner {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.sambutan-media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.signature {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+/* ---------- page: visi & misi ---------- */
+
+.visi-misi-inner {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.visi-panel {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.visi-panel p {
+  margin-bottom: 0;
+}
+
+.misi-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.misi-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.85rem;
+}
+
+.misi-list li:last-child {
+  margin-bottom: 0;
+}
+
+.misi-list li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-mid);
+}
+
+/* ---------- page: jurusan ---------- */
+
+.page-head-inner {
+  display: grid;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.page-head .lead {
+  color: var(--muted-foreground);
+}
+
+.page-head-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.jurusan-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.jurusan-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* The two cards without a photo carry the soft accent tint. */
+.jurusan-card:nth-child(n + 2) {
+  background: var(--accent-soft);
+}
+
+.jurusan-card img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 4px);
+  margin-bottom: 1.25rem;
+}
+
+.jurusan-card ul {
+  margin-bottom: 0;
+}
+
+/* ---------- page: kontak ---------- */
+
+.kontak-grid {
+  display: grid;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.kontak-info {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.kontak-info dl {
+  margin: 0;
+}
+
+.kontak-info dt {
+  margin-top: 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.kontak-info dt:first-of-type {
+  margin-top: 0;
+}
+
+.kontak-info dd {
+  margin: 0.15rem 0 0;
+}
+
+.kontak-info dd a {
+  text-decoration: underline;
+}
+
+.kontak-map {
+  margin-top: 2.5rem;
+}
+
+.map-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 18rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ---------- motion ---------- */
+
+/* Hover-only motion, so touch devices never keep a stuck lifted state. */
+@media (hover: hover) {
+  .btn:hover:not(:active) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgb(51 66 87 / 0.16);
+  }
+
+  .jurusan-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-mid);
+    box-shadow: 0 16px 32px rgb(51 66 87 / 0.12);
+  }
+
+  .hero-media:hover img,
+  .sambutan-media:hover img,
+  .page-head-media:hover img,
+  .jurusan-card:hover img {
+    transform: scale(1.03);
+  }
+
+  tbody tr:hover td {
+    background: var(--accent-soft);
+  }
+}
+
+.hero-media,
+.sambutan-media,
+.page-head-media,
+.jurusan-card {
+  overflow: hidden;
+}
+
+.hero-media img,
+.sambutan-media img,
+.page-head-media img,
+.jurusan-card img {
+  transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+
+/* Uses the independent `translate` property rather than `transform`, so the
+   hover lift on the same element still composes instead of being overridden. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Content enters as it scrolls into view, but only where scroll-driven
+   animations exist and the visitor has not asked for reduced motion.
+   Nothing is hidden by default, so unsupported browsers just see the page. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-inner > *,
+    .sambutan-inner > *,
+    .visi-misi-inner > *,
+    .page-head .container > *,
+    .jurusan-card,
+    .table-section h2,
+    .table-wrap,
+    .kontak-grid > *,
+    .kontak-map {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 12% cover 30%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Printing always renders the whole page: scroll-driven reveals would
+   otherwise leave whatever is below the fold invisible on paper. */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- breakpoints ---------- */
+
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 1.875rem; }
+
+  .container {
+    padding-inline: 2rem;
+  }
+
+  section {
+    padding-block: 4.5rem;
+  }
+
+  nav.navbar {
+    flex-wrap: nowrap;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+  }
+
+  .sambutan-inner {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 3rem;
+  }
+
+  .visi-misi-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .page-head-inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+  }
+
+  .jurusan-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .jurusan-card:first-child {
+    grid-row: span 2;
+  }
+
+  .kontak-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+  }
+}

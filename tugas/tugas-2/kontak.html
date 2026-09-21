@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - SMAN 1 Gunung Talang</title>
+  <meta name="description" content="Alamat, email, dan formulir kontak SMAN 1 Gunung Talang untuk pertanyaan pendaftaran, kegiatan sekolah, dan kerja sama." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="images/logo-sekolah.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Navigasi utama">
+      <a class="logo" href="index.html">
+        <img src="images/logo-sekolah.png" alt="Logo SMAN 1 Gunung Talang" width="480" height="465" />
+        <span class="logo-text">SMAN 1 Gunung Talang</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jurusan.html">Jurusan</a></li>
+        <li><a href="kontak.html" aria-current="page">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container page-head-inner">
+        <div class="page-head-text">
+          <h1>Kontak</h1>
+          <p class="lead">
+            Kirim pertanyaan tentang pendaftaran, kegiatan sekolah, atau kerja sama.
+          </p>
+        </div>
+        <div class="page-head-media">
+          <img
+            src="images/fto-beberapa-guru.jpeg"
+            alt="Beberapa guru SMAN 1 Gunung Talang"
+            width="1600"
+            height="1200"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="kontak">
+      <div class="container">
+        <div class="kontak-grid">
+          <div class="kontak-form">
+            <h2>Formulir Kontak</h2>
+            <!-- Tidak ada backend: form ini placeholder, pengiriman belum diproses. -->
+            <form action="#" method="post">
+              <div class="field">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" required />
+                <p class="hint">Nama lengkap Anda.</p>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <p class="hint">Email aktif untuk balasan.</p>
+              </div>
+              <div class="field">
+                <label for="pesan">Pesan</label>
+                <textarea id="pesan" name="pesan" rows="6" required></textarea>
+                <p class="hint">Tulis pertanyaan atau keperluan Anda.</p>
+              </div>
+              <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+            </form>
+          </div>
+
+          <div class="kontak-info">
+            <h2>Info Kontak</h2>
+            <dl>
+              <dt>Alamat</dt>
+              <dd>Jl. Solok Padang KM. 10 Pasar Usang, Cupak, Kec. Gunung Talang, Kab. Solok, Sumatera Barat</dd>
+              <dt>Telepon</dt>
+              <dd>7333270</dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:sman1.gngtlg@gmail.com">sman1.gngtlg@gmail.com</a></dd>
+              <dt>NPSN</dt>
+              <dd>10301592</dd>
+              <dt>Akreditasi</dt>
+              <dd>A</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="kontak-map">
+          <h2>Lokasi</h2>
+          <iframe
+            class="map-frame"
+            src="https://maps.google.com/maps?q=SMAN+1+Gunung+Talang%2C+Jl.+Solok+Padang+KM+10%2C+Pasar+Usang%2C+Cupak%2C+Kabupaten+Solok%2C+Sumatera+Barat&z=15&hl=id&output=embed"
+            title="Peta lokasi SMAN 1 Gunung Talang"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>SMAN 1 Gunung Talang</p>
+      <p>&copy; 2026 SMAN 1 Gunung Talang. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
