@@ -1,7 +1,4 @@
-/* =========================================================
-   SMAN 1 Gunung Talang - shared stylesheet
-   Light mode only. No build step, no JavaScript.
-   ========================================================= */
+
 
 :root {
   --background: #EEEEEE;
@@ -43,7 +40,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Headings use the serif face; weights stay at 700. */
 h1,
 h2,
 h3 {
@@ -104,8 +100,6 @@ img {
 section {
   padding-block: 3rem;
 }
-
-/* ---------- site chrome ---------- */
 
 header.site-header {
   position: sticky;
@@ -196,8 +190,6 @@ nav.navbar {
   background-size: 100% 2px;
 }
 
-/* ---------- buttons ---------- */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -243,8 +235,6 @@ nav.navbar {
   border-color: var(--accent);
   color: var(--accent);
 }
-
-/* ---------- forms ---------- */
 
 .field {
   display: grid;
@@ -294,8 +284,6 @@ textarea:focus {
   color: var(--muted-foreground);
 }
 
-/* ---------- tables ---------- */
-
 .table-wrap {
   overflow-x: auto;
 }
@@ -333,8 +321,6 @@ tr.total td {
   color: var(--heading);
 }
 
-/* ---------- footer ---------- */
-
 footer.site-footer {
   border-top: 1px solid var(--border);
   padding-block: 2rem;
@@ -353,8 +339,6 @@ footer.site-footer {
   margin: 0;
   max-width: none;
 }
-
-/* ---------- page: hero (index) ---------- */
 
 .hero {
   position: relative;
@@ -397,8 +381,6 @@ footer.site-footer {
   border-radius: var(--radius);
 }
 
-/* ---------- page: sambutan ---------- */
-
 .sambutan {
   background: var(--surface);
   border-block: 1px solid var(--border);
@@ -423,8 +405,6 @@ footer.site-footer {
   font-style: italic;
   color: var(--muted-foreground);
 }
-
-/* ---------- page: visi & misi ---------- */
 
 .visi-misi-inner {
   display: grid;
@@ -468,8 +448,6 @@ footer.site-footer {
   background: var(--accent-mid);
 }
 
-/* ---------- page: jurusan ---------- */
-
 .page-head-inner {
   display: grid;
   gap: var(--gap);
@@ -499,7 +477,6 @@ footer.site-footer {
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-/* The two cards without a photo carry the soft accent tint. */
 .jurusan-card:nth-child(n + 2) {
   background: var(--accent-soft);
 }
@@ -514,8 +491,6 @@ footer.site-footer {
 .jurusan-card ul {
   margin-bottom: 0;
 }
-
-/* ---------- page: kontak ---------- */
 
 .kontak-grid {
   display: grid;
@@ -565,9 +540,6 @@ footer.site-footer {
   border-radius: var(--radius);
 }
 
-/* ---------- motion ---------- */
-
-/* Hover-only motion, so touch devices never keep a stuck lifted state. */
 @media (hover: hover) {
   .btn:hover:not(:active) {
     transform: translateY(-2px);
@@ -606,8 +578,6 @@ footer.site-footer {
   transition: transform .6s cubic-bezier(.2, .7, .2, 1);
 }
 
-/* Uses the independent `translate` property rather than `transform`, so the
-   hover lift on the same element still composes instead of being overridden. */
 @keyframes reveal {
   from {
     opacity: 0;
@@ -620,9 +590,6 @@ footer.site-footer {
   }
 }
 
-/* Content enters as it scrolls into view, but only where scroll-driven
-   animations exist and the visitor has not asked for reduced motion.
-   Nothing is hidden by default, so unsupported browsers just see the page. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .hero-inner > *,
@@ -655,8 +622,6 @@ footer.site-footer {
   }
 }
 
-/* Printing always renders the whole page: scroll-driven reveals would
-   otherwise leave whatever is below the fold invisible on paper. */
 @media print {
   *,
   *::before,
@@ -665,8 +630,6 @@ footer.site-footer {
     transition: none !important;
   }
 }
-
-/* ---------- breakpoints ---------- */
 
 @media (min-width: 640px) {
   .footer-inner {
