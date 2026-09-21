@@ -1,4 +1,4 @@
-# Website SMAN 1 Gunung Talang
+# Tugas Website Sekolah Asal
 
 Static website sekolah untuk tugas Pemrograman Web (Tugas 2). Dibangun dengan HTML5 + CSS3, tanpa JavaScript.
 
@@ -13,13 +13,12 @@ Static website sekolah untuk tugas Pemrograman Web (Tugas 2). Dibangun dengan HT
 ## Fitur
 
 - Header sticky dengan navbar blur
-- Tata letak responsive, satu kolom di layar kecil
+- Tata letak responsive
 - Font Lora + Libre Baskerville via Google Fonts
 - Peta lokasi interaktif (Google Maps embed)
-- Animasi masuk saat scroll, otomatis nonaktif bila pengguna memilih reduced motion
 - Palet warna `#EEEEEE`, `#334257`, `#476072`, `#548CA8`
 - Info kontak dan statistik siswa bersumber dari Dapodik Kemendikdasmen
 
 ## Menjalankan
 
-Buka `index.html` langsung di browser, atau jalankan `python3 -m http.server` di folder ini. Versi terpasang ada di https://sman1-gunung-talang.vercel.app.
+Buka `index.html` langsung di browser.
