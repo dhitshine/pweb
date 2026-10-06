@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#F2F0EF">
+    <title>Manajemen Mahasiswa ITS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="brand" href="#main-content">Manajemen Mahasiswa ITS</a>
+      <nav class="nav-menu" aria-label="Navigasi utama">
+        <a href="#form-mahasiswa">Form Mahasiswa</a>
+        <a href="#data-mahasiswa">Data Mahasiswa</a>
+      </nav>
+    </header>
+
+    <main class="container" id="main-content">
+      <section class="card" id="form-mahasiswa" aria-labelledby="form-title">
+        <h1 id="form-title">Tambah Mahasiswa</h1>
+        <form>
+          <div class="form-group">
+            <label for="nrp">NRP</label>
+            <input id="nrp" name="nrp" type="text" autocomplete="off" placeholder="Masukkan NRP">
+          </div>
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input id="nama" name="nama" type="text" autocomplete="name" placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="form-group">
+            <label for="program-studi">Program Studi</label>
+            <select id="program-studi" name="programStudi">
+              <option value="" selected>Pilih program studi</option>
+              <option value="Teknik Informatika">Teknik Informatika</option>
+              <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+              <option value="Rekayasa Kecerdasan Artifisial">Rekayasa Kecerdasan Artifisial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="nrp@student.its.ac.id">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="button">Tambah Mahasiswa</button>
+            <button class="btn btn-secondary" type="reset">Reset Form</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card data-card" id="data-mahasiswa" aria-labelledby="data-title">
+        <div class="table-header">
+          <h2 id="data-title">Data Mahasiswa</h2>
+          <div class="search-box">
+            <label class="sr-only" for="cari">Cari mahasiswa</label>
+            <input id="cari" name="cari" type="search" placeholder="Cari mahasiswa...">
+            <button class="btn btn-primary" type="button">Cari</button>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <caption class="sr-only">Daftar contoh mahasiswa beserta NRP, nama, program studi, email, dan aksi.</caption>
+            <thead>
+              <tr>
+                <th scope="col">NRP</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Program Studi</th>
+                <th scope="col">Email</th>
+                <th scope="col">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5025271001</td>
+                <td>Aditya Pratama</td>
+                <td>Teknik Informatika</td>
+                <td>5025271001@student.its.ac.id</td>
+                <td><div class="actions"><button class="action edit" type="button" aria-label="Edit Aditya Pratama">Edit</button><button class="action delete" type="button" aria-label="Hapus Aditya Pratama">Hapus</button></div></td>
+              </tr>
+              <tr>
+                <td>5053271002</td>
+                <td>Putri Maharani</td>
+                <td>Rekayasa Perangkat Lunak</td>
+                <td>5053271002@student.its.ac.id</td>
+                <td><div class="actions"><button class="action edit" type="button" aria-label="Edit Putri Maharani">Edit</button><button class="action delete" type="button" aria-label="Hapus Putri Maharani">Hapus</button></div></td>
+              </tr>
+              <tr>
+                <td>5054271003</td>
+                <td>Rizky Firmansyah</td>
+                <td>Rekayasa Kecerdasan Artifisial</td>
+                <td>5054271003@student.its.ac.id</td>
+                <td><div class="actions"><button class="action edit" type="button" aria-label="Edit Rizky Firmansyah">Edit</button><button class="action delete" type="button" aria-label="Hapus Rizky Firmansyah">Hapus</button></div></td>
+              </tr>
+              <tr>
+                <td>5025271004</td>
+                <td>Nadia Aulia</td>
+                <td>Teknik Informatika</td>
+                <td>5025271004@student.its.ac.id</td>
+                <td><div class="actions"><button class="action edit" type="button" aria-label="Edit Nadia Aulia">Edit</button><button class="action delete" type="button" aria-label="Hapus Nadia Aulia">Hapus</button></div></td>
+              </tr>
+              <tr>
+                <td>5053271005</td>
+                <td>Fajar Nugraha</td>
+                <td>Rekayasa Perangkat Lunak</td>
+                <td>5053271005@student.its.ac.id</td>
+                <td><div class="actions"><button class="action edit" type="button" aria-label="Edit Fajar Nugraha">Edit</button><button class="action delete" type="button" aria-label="Hapus Fajar Nugraha">Hapus</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="pagination" aria-label="Halaman data mahasiswa">
+          <button type="button" aria-label="Halaman sebelumnya" disabled>Sebelumnya</button>
+          <button class="active" type="button" aria-current="page">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button" aria-label="Halaman berikutnya">Berikutnya</button>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
