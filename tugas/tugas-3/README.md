@@ -2,9 +2,8 @@
 
 ## Identitas
 
-| Keterangan | Data |
-| --- | --- |
 | Nama | Radhit Akriandra |
+| --- | --- |
 | NRP | 5025251084 |
 
 ## Deskripsi
